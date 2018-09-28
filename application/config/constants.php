@@ -94,10 +94,10 @@ define("DEFAULT_TITLE_ADMIN","WM Électricité");
 }*/
 
 
-define('CLIENT_ID','a7397ff5-e1f0-45e0-9f66-f3030d9f62f6');
-define('CLIENT_SECRET','zeQvtdkKGSFq');
+define('CLIENT_ID','{}');
+define('CLIENT_SECRET','12312313213213');
 define('REDIRECT_URL','http://87.66.16.17:7080/erp/administrator');
-define('DIVISION','249534');
+define('DIVISION','123456');
 
 /*------- REDIRECT URL--------*/
 define("ADMIN",'administrator');
