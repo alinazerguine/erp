@@ -14,8 +14,6 @@ class Mod_common extends CI_Model {
 
       // Initialize ExactAPI
       $exactApi = new ExactApi('be', $clientId, $clientSecret, $division);  
-      // var_dump($exactApi); 
-      // echo("---");
       $exactApi->getOAuthClient()->setRedirectUri($redirectUri);
 
       $this->db->select("*");
@@ -24,13 +22,10 @@ class Mod_common extends CI_Model {
       $query = $this->db->get();
       $result = $query->row_array();
 
-      //print_r($result);exit;
-
       if (!isset($_GET['code']) && (count($result)==0 || $result['refresh_token']=='') ) {
 
         // Redirect to Auth-endpoint
         $authUrl = $exactApi->getOAuthClient()->getAuthenticationUrl();
-        // var_dump($_GET['code']);
         header('Location: ' . $authUrl, TRUE, 302);
         die('Redirect');
 
@@ -70,9 +65,9 @@ class Mod_common extends CI_Model {
 
           $tokenResult = json_decode($result, TRUE);
 
-          echo '------------- TOKEN RESPONSE--------------<br>';
-          echo'<pre>';print_r($tokenResult);
-          die();
+          // echo '------------- TOKEN RESPONSE--------------<br>';
+          // echo'<pre>';print_r($tokenResult);
+          // die();
 
           $update = array(
             'access_token' =>$tokenResult['access_token'],

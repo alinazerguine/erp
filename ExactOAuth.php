@@ -134,7 +134,7 @@ class ExactOAuth
 		$result = curl_exec($ch);
 
 		$decodedResult = json_decode($result, TRUE);
-		var_dump($decodedResult);
+		// var_dump($decodedResult);
 		if (isset($decodedResult['error'])) {
 			return FALSE;
 		}
